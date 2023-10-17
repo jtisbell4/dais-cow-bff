@@ -1,4 +1,4 @@
-# Cow BBF Project
+# Cow BFF Project
 
 This is a sample data engineering project that tries to answer the question if cow best friends also take their meals together. 
 
@@ -8,7 +8,7 @@ This project has been used for the talk "[Bridging the Production Gap: Develop a
 
 [![Youtube](images/video.png)](https://www.youtube.com/watch?v=-mtwFb9Dyy0)
 
-## Preparing the sample Data
+## Preparing The Sample Data
 
 The notebook `/notebooks/Generate Cow Data.ipynb` contains the code to generate the sample data. In order to create the sample data import this notebook into your Databricks workspace and execute it there.
 
@@ -23,8 +23,16 @@ python3.10 -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
 ```
+**Update 10/17/23:** once the Databricks VS Code extension is installed, please add the following to your VS Code User Settings JSON:
 
-## Running unit tests
+```
+{   
+    "databricks.experiments.optInto": [
+        "notebooks.dbconnect",
+    ]
+}
+```
+## Running Unit Tests
 
 ```sh
 pytest -v tests --disable-warnings
