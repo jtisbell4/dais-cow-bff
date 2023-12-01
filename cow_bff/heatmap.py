@@ -5,7 +5,7 @@ from pyspark.sql.types import IntegerType
 calculate_time_overlap = (
     lambda start_interval_1, end_interval_1, start_interval_2, end_interval_2: 0
     if end_interval_1 <= start_interval_2 or end_interval_2 <= start_interval_1
-    else max(end_interval_1, end_interval_2) - min(start_interval_1, start_interval_2)
+    else min(end_interval_1, end_interval_2) - max(start_interval_1, start_interval_2)
 )
 
 calculate_time_overlap_udf = udf(calculate_time_overlap, IntegerType())
